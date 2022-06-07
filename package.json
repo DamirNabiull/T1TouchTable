@@ -4,7 +4,7 @@
   "description": "Touch-Table stand for T1 company",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DamirNabiull/T1TouchTable/issues"
   },
-  "homepage": "https://github.com/DamirNabiull/T1TouchTable#readme"
+  "homepage": "https://github.com/DamirNabiull/T1TouchTable#readme",
+  "devDependencies": {
+    "electron": "^19.0.3"
+  }
 }
