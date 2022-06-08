@@ -13,13 +13,13 @@
         <img class="info" src="./Assets/Content/AIR+.png" />
 
         <div class="leftPanel">
-            <div class="backToMenu">
+            <div class="backToMenu" onclick="backClick();">
                 <img class="leftArrow" src="./Assets/leftArrow.svg" />
                 <p class="backText">Назад к продуктам</p>
             </div>
 
             <div class="qrInfo">
-                <img class="qrCode" src="./Assets/QR/qr.png" />
+                <img class="qrCode" src="./Assets/QR/AIR+.png" />
                 <h1 class="qrText">Отсканируйте QR-код, чтобы<br>сохранить информацию о продукте</h1>
             </div>
 
@@ -79,8 +79,59 @@
                 <div class="categoryButton" style="width: 253px;" onclick="categoryClick(this);">Обслуживание банков</div>
             </div>
         </div>
+
+        <div class="cardsLabel">
+            <div class="card" id="Иннотех+" style="top: 33px; left: 0px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/Иннотех+.png"/>
+            </div>
+    
+            <div class="card" id="Cloud" style="top: 33px; left: 464px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/Cloud.png"/>
+            </div>
+
+            <div class="card" id="Sfera+" style="top: 33px; left: 928px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/Sfera+.png"/>
+            </div>
+            
+            <div class="card" id="Дататех+" style="top: 380px; left: 0px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/Дататех+.png"/>
+            </div>
+
+            <div class="card" id="Watchman" style="top: 380px; left: 464px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/Watchman.png"/>
+            </div>
+
+            <div class="card" id="Dion" style="top: 380px; left: 928px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/Dion.png"/>
+            </div>
+
+            <div class="card" id="AIR+" style="top: 727px; left: 0px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/AIR+.png"/>
+            </div>
+
+            <div class="card" id="CRM+" style="top: 727px; left: 464px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/CRM+.png"/>
+            </div>
+
+            <div class="card" id="Мультикарта+" style="top: 727px; left: 928px;" onclick="cardClick(this);">
+                <img class="cardImage" src="./Assets/Cards/Мультикарта+.png"/>
+            </div>
+        </div>
+
+        <div class="indicatorsLabel">
+            <div class="indicator" id="i1" style="top: 33px; left: 0px;"></div>
+            <div class="indicator" id="i2" style="top: 33px; left: 464px;"></div>
+            <div class="indicator" id="i3" style="top: 33px; left: 928px;"></div>
+            <div class="indicator" id="i4" style="top: 380px; left: 0px;"></div>
+            <div class="indicator" id="i5" style="top: 380px; left: 464px;"></div>
+            <div class="indicator" id="i6" style="top: 380px; left: 928px;"></div>
+            <div class="indicator" id="i7" style="top: 727px; left: 0px;"></div>
+            <div class="indicator" id="i8" style="top: 727px; left: 464px;"></div>
+            <div class="indicator" id="i9" style="top: 727px; left: 928px;"></div>
+        </div>
     </div>
 
+    <script type="text/javascript" src="data.json"></script>
     <script type="text/javascript" src="render.js"></script>
 </body>
 
