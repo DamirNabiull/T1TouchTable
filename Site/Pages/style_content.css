@@ -1,6 +1,6 @@
 @font-face {
     font-family: "ALS Hauss";
-    src: url("./Assets/Fonts/ALS_Hauss_Medium_1.003.otf") format("opentype");
+    src: url("../Assets/Fonts/ALS_Hauss_Medium_1.003.otf") format("opentype");
 }
 
 * {
@@ -20,7 +20,6 @@
     position: absolute;
     width: 1920px;
     min-height: 100vh;
-    display: none;
 }
 
 .leftPanel {
@@ -112,7 +111,7 @@
     width: 409px;
     height: 231px;
     background: #FFFFFF;
-    background-image: url(./Assets/VideoButtons/AIR+.png);
+    /* background-image: url(../Assets/VideoButtons/AIR+.png); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -150,101 +149,6 @@
 .info {
     position: absolute;
     width: 1920px;
-    height: 1815px;
     object-fit: none;
     object-position: 0% 0%;
-}
-
-
-
-
-/* MENU */
-
-.menu {
-    position: absolute;
-    width: 1920px;
-    height: 1080px;
-    background-color: #E2E2E9;
-}
-
-.logo {
-    position: absolute;
-    width: 446.38px;
-    height: 84px;
-    top: 33px;
-    left: 40px;
-    object-fit: cover;
-}
-
-.categories {
-    position: absolute;
-    width: 448px;
-    height: 550px;
-    top: 167px;
-    left: 33px;
-}
-
-.buttonRow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 448px;
-    height: 46px;
-    margin-top: 10px;
-}
-
-.buttonRow#r0 {
-    margin-top: 0px;
-}
-
-.categoryButton {
-    box-sizing: border-box;
-    padding: 10px;
-    height: 46px;
-    background-color: #F8F8FA;
-    border: 1.14791px solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 16.0707px 34.4373px rgba(0, 0, 0, 0.1);
-    border-radius: 45.9164px;
-}
-
-.categoryButton:not(:empty) {
-    font-family: 'ALS Hauss';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 120%;
-    text-align: center;
-    letter-spacing: -0.04em;
-    color: #21A8DF;
-    user-select: none;
-}
-
-.cardsLabel, .indicatorsLabel {
-    position: absolute;
-    width: 1395px;
-    height: 1080px;
-    left: 525px;
-    top: 0px;
-}
-
-.indicatorsLabel {
-    display: none;
-}
-
-.card {
-    position: absolute;
-    width: 434px;
-    height: 318px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 7.89145px 4.38414px -5.26096px rgba(0, 0, 0, 0.12);
-    border-radius: 26px;
-}
-
-.indicator {
-    position: absolute;
-    width: 434px;
-    height: 318px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 26px;
-    background-color: #e2e2e9cc;
 }
