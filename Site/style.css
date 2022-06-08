@@ -12,10 +12,15 @@
     display: none;
 }
 
+
+
+/* LEFT PANNEL */
+
 .content {
     position: absolute;
     width: 1920px;
     min-height: 100vh;
+    display: none;
 }
 
 .leftPanel {
@@ -60,6 +65,7 @@
     letter-spacing: -0.04em;
     color: #21A8DF;
     margin-left: 15px;
+    user-select: none;
 }
 
 .qrInfo {
@@ -90,6 +96,7 @@
     text-align: center;
     letter-spacing: -0.03em;
     color: #000000;
+    user-select: none;
 }
 
 .videoPresentation {
@@ -137,6 +144,7 @@
     text-align: center;
     letter-spacing: -0.03em;
     color: #000000;
+    user-select: none;
 }
 
 .info {
@@ -145,4 +153,68 @@
     height: 1815px;
     object-fit: none;
     object-position: 0% 0%;
+}
+
+
+
+
+/* MENU */
+
+.menu {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background-color: #E2E2E9;
+}
+
+.logo {
+    position: absolute;
+    width: 446.38px;
+    height: 84px;
+    top: 33px;
+    left: 40px;
+    object-fit: cover;
+}
+
+.categories {
+    position: absolute;
+    width: 448px;
+    height: 550px;
+    top: 167px;
+    left: 33px;
+}
+
+.buttonRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 448px;
+    height: 46px;
+    margin-top: 10px;
+}
+
+.buttonRow#r0 {
+    margin-top: 0px;
+}
+
+.categoryButton {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 46px;
+    background: #F8F8FA;
+    border: 1.14791px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 16.0707px 34.4373px rgba(0, 0, 0, 0.1);
+    border-radius: 45.9164px;
+}
+
+.categoryButton:not(:empty) {
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #21A8DF;
+    user-select: none;
 }
