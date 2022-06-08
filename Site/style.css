@@ -1,13 +1,22 @@
+@font-face {
+    font-family: "ALS Hauss";
+    src: url("./Assets/Fonts/ALS_Hauss_Medium_1.003.otf") format("opentype");
+}
+
 * {
     top: 0;
     left: 0;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .content {
     position: absolute;
     width: 1920px;
     min-height: 100vh;
-    background-color: aquamarine;
 }
 
 .leftPanel {
@@ -37,7 +46,7 @@
     /* position: relative; */
     width: 12px;
     height: 21.07px;
-    margin-left: 40px;
+    margin-left: 35px;
 }
 
 .backText {
@@ -51,7 +60,7 @@
     text-align: center;
     letter-spacing: -0.04em;
     color: #21A8DF;
-    margin-left: 18px;
+    margin-left: 15px;
 }
 
 .qrInfo {
@@ -73,7 +82,7 @@
     position: absolute;
     width: 363px;
     height: 62px;
-    top: 166px;
+    top: 156px;
     font-family: 'ALS Hauss';
     font-style: normal;
     font-weight: 500;
@@ -96,7 +105,7 @@
     position: absolute;
     width: 409px;
     height: 231px;
-    background: #BAE7EF;
+    background: #FFFFFF;
     box-shadow: 0px 4px 12px rgba(2, 6, 31, 0.1), 0px 14px 37px rgba(0, 0, 0, 0.1);
     border-radius: 18px;
 }
@@ -117,7 +126,7 @@
     width: 191px;
     height: 31px;
     left: 109px;
-    top: 256px;
+    top: 246px;
 
     font-family: 'ALS Hauss';
     font-style: normal;
@@ -128,4 +137,13 @@
     text-align: center;
     letter-spacing: -0.03em;
     color: #000000;
+}
+
+.info {
+    position: absolute;
+    width: 1920px;
+    height: 3864px;
+    object-fit: none;
+    object-position: 0% 0%;
+    /* background-image: url(./Assets/Content/T1CRM+.svg); */
 }
