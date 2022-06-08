@@ -105,6 +105,10 @@
     width: 409px;
     height: 231px;
     background: #FFFFFF;
+    background-image: url(./Assets/VideoButtons/AIR+.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 18px;
     box-shadow: 0px 4px 12px rgba(2, 6, 31, 0.1), 0px 14px 37px rgba(0, 0, 0, 0.1);
 }
@@ -138,7 +142,7 @@
 .info {
     position: absolute;
     width: 1920px;
-    height: 3864px;
+    height: 1815px;
     object-fit: none;
     object-position: 0% 0%;
 }
