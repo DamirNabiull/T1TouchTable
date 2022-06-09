@@ -74,16 +74,13 @@
     user-select: none;
 }
 
-.cardsLabel, .indicatorsLabel {
+.cardsLabel,
+.indicatorsLabel {
     position: absolute;
     width: 1395px;
     height: 1080px;
     left: 525px;
     top: 0px;
-}
-
-.indicatorsLabel {
-    display: none;
 }
 
 .card {
@@ -102,4 +99,22 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 26px;
     background-color: #e2e2e9cc;
+    display: none;
+}
+
+.offCategories {
+    position: absolute;
+    width: 253.19px;
+    height: 46px;
+    left: 136px;
+    top: 1004px;
+    background: #F8F8FA;
+    background-image: url(./Assets/offCategories.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1.14791px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 16.0707px 34.4373px rgba(0, 0, 0, 0.1);
+    border-radius: 45.9164px;
+    display: none;
 }
