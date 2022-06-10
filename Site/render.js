@@ -4,6 +4,7 @@ const { ipcRenderer } = require('electron');
 // BUTTONS
 const allCategoryButtons = document.getElementsByClassName("categoryButton");
 const allDisplayButtons = document.getElementsByClassName("displayButton");
+const displaysBlocked = document.getElementsByClassName("displaysBlocked")[0];
 
 // CONTENT
 const content = document.getElementsByClassName("content")[0];
@@ -77,6 +78,7 @@ ipcRenderer.on('video-response', (event, arg) => {
         rightButton.style.backgroundColor = displayButtonColorActive;
     }
     displayActive -= 1;
+    displaysBlocked.style.display = 'none';
 });
 
 function ButtonClick(button) {
@@ -89,6 +91,10 @@ function ButtonClick(button) {
             source: currentCard
         };
         ipcRenderer.send('video-sender-clicked', Data);
+    }
+
+    if (displayActive == 2) {
+        displaysBlocked.style.display = 'inline';
     }
 }
 

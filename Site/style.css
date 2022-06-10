@@ -307,3 +307,22 @@
 .displayButton#rightButt {
     border-radius: 0px 50px 50px 0px;
 }
+
+.displaysBlocked {
+    position: fixed;
+    width: 621px;
+    height: 421px;
+    left: 650px;
+    top: 330px;
+
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(30px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 50px;
+
+    background-image: url(./Assets/blocked.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+}
