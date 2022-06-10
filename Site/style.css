@@ -34,7 +34,7 @@
 .categories {
     position: absolute;
     width: 448px;
-    height: 550px;
+    height: 606px;
     top: 167px;
     left: 33px;
 }
@@ -117,4 +117,145 @@
     box-shadow: 0px 16.0707px 34.4373px rgba(0, 0, 0, 0.1);
     border-radius: 45.9164px;
     display: none;
+}
+
+
+/* LEFT PANNEL */
+
+.content {
+    position: absolute;
+    width: 1920px;
+    min-height: 100vh;
+    display: none;
+}
+
+.leftPanel {
+    position: fixed;
+    width: 527px;
+    height: 1080px;
+    background-color: #E2E2E9;
+}
+
+.backToMenu {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    width: 331px;
+    height: 63px;
+    left: 98px;
+    top: 51px;
+    background: #F8F8FA;
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 16.0707px 34.4373px rgba(0, 0, 0, 0.1);
+    border-radius: 45.9164px;
+}
+
+.leftArrow {
+    /* position: relative; */
+    width: 12px;
+    height: 21.07px;
+    margin-left: 35px;
+}
+
+.backText {
+    width: 221px;
+    height: 31px;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #21A8DF;
+    margin-left: 15px;
+    user-select: none;
+}
+
+.qrInfo {
+    position: absolute;
+    width: 363px;
+    height: 228px;
+    left: 82px;
+    top: 322px;
+}
+
+.qrCode {
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    left: 106px;
+}
+
+.qrText {
+    position: absolute;
+    width: 363px;
+    height: 62px;
+    top: 156px;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #000000;
+    user-select: none;
+}
+
+.videoPresentation {
+    position: absolute;
+    width: 409px;
+    height: 287px;
+    left: 59px;
+    top: 739px;
+}
+
+.videoButton {
+    position: absolute;
+    width: 409px;
+    height: 231px;
+    background: #FFFFFF;
+    /* background-image: url(../Assets/VideoButtons/AIR+.png); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 18px;
+    box-shadow: 0px 4px 12px rgba(2, 6, 31, 0.1), 0px 14px 37px rgba(0, 0, 0, 0.1);
+}
+
+.playButton {
+    position: absolute;
+    width: 52.61px;
+    height: 58.9px;
+    left: 182.1px;
+    top: 86.91px;
+    object-fit: none;
+    object-position: 50% 30%;
+}
+
+.videoText {
+    position: absolute;
+    width: 191px;
+    height: 31px;
+    left: 109px;
+    top: 246px;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #000000;
+    user-select: none;
+}
+
+.info {
+    position: absolute;
+    width: 1920px;
+    object-fit: none;
+    object-position: 0% 0%;
 }

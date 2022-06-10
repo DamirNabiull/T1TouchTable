@@ -1,8 +1,8 @@
 const { app, BrowserWindow } = require('electron');
-var win;
+var win1, win2;
 
 app.whenReady().then(() => {
-	win = new BrowserWindow({
+	win1 = new BrowserWindow({
 		width: 1920,
 		height: 1080,
 		transparent: false,
@@ -19,10 +19,10 @@ app.whenReady().then(() => {
 		},
 	})
 
-	win.setVisibleOnAllWorkspaces(false, {
+	win1.setVisibleOnAllWorkspaces(false, {
 		visibleOnFullScreen: false,
 		skipTransformProcessType: false,
 	});
 	
-	win.loadFile('Site/index.html');
+	win1.loadFile('Site/index.html');
 })

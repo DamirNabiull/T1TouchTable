@@ -1,5 +1,11 @@
 const allCategoryButtons = document.getElementsByClassName("categoryButton");
 
+// CONTENT
+const content = document.getElementsByClassName("content")[0];
+const info = document.getElementsByClassName("info")[0];
+const qrCode = document.getElementsByClassName("qrCode")[0];
+const videoButton = document.getElementsByClassName("videoButton")[0];
+
 // MENU
 const menu = document.getElementsByClassName("menu")[0];
 const indicators = document.getElementsByClassName("indicator");
@@ -14,8 +20,10 @@ const categoryToCard = {
     'Большие данные': document.getElementById('i4'),
     'Машинное обучение': document.getElementById('i4'),
     'Open Source': document.getElementById('i2'),
+    'Облачная платформа': document.getElementById('i2'),
     'Оперэффективность': document.getElementById('i5'),
     'Видеоконференция': document.getElementById('i6'),
+    'Защищенность данных': document.getElementById('i6'),
     'Воронка продаж': document.getElementById('i8'),
     'Транзакции': document.getElementById('i9'),
     'Обслуживание банков': document.getElementById('i9'),
@@ -28,6 +36,20 @@ var choosenCategories = 0;
 
 for (const [key, value] of Object.entries(categoryToCard)) {
     value.value = 0;
+}
+
+function backClick() {
+    content.style.display = "none";
+    menu.style.display = "inline";
+}
+
+function cardClick(card) {
+    offFilters();
+    info.src = `./Assets/Content/${card.id}.png`;
+    qrCode.src = `./Assets/QR/${card.id}.png`;
+    videoButton.style.backgroundImage = `url(./Assets/VideoButtons/${card.id}.png)`;
+    content.style.display = "inline";
+    menu.style.display = "none";
 }
 
 function categoryClick(button) {
@@ -59,10 +81,6 @@ function categoryClick(button) {
     // console.log(choosenCategories);
     button.style.backgroundColor = window.getComputedStyle(button).color;
     button.style.color = tempColor;
-}
-
-function cardClick(card) {
-    location.href = `./Pages/${card.id}.html`;
 }
 
 function showIndicators() {
