@@ -43,6 +43,18 @@ const categoryToCard = {
     'AI-ассистенты HR': document.getElementById('i7')
 }
 
+const infoH = {
+    'Иннотех+': 4171,
+    'Cloud': 3864,
+    'Sfera+': 3675,
+    'Дататех+': 3804,
+    'Watchman': 3753,
+    'Dion': 3010,
+    'AIR+': 1882,
+    'CRM+': 3502,
+    'Мультикарта+': 2995,
+}
+
 var choosenCategories = 0;
 var displayActive = 0;
 var currentCard = '';
@@ -96,6 +108,7 @@ function backClick() {
 function cardClick(card) {
     offFilters();
     currentCard = card.id;
+    info.style.height = `${infoH[card.id]}px`;
     info.src = `./Assets/Content/${card.id}.png`;
     qrCode.src = `./Assets/QR/${card.id}.png`;
     videoButton.style.backgroundImage = `url(./Assets/VideoButtons/${card.id}.png)`;
