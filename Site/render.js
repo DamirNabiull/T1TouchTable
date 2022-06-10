@@ -1,10 +1,21 @@
+// ELECTRON
+const { ipcRenderer } = require('electron');
+
+// BUTTONS
 const allCategoryButtons = document.getElementsByClassName("categoryButton");
+const allDisplayButtons = document.getElementsByClassName("displayButton");
 
 // CONTENT
 const content = document.getElementsByClassName("content")[0];
 const info = document.getElementsByClassName("info")[0];
 const qrCode = document.getElementsByClassName("qrCode")[0];
 const videoButton = document.getElementsByClassName("videoButton")[0];
+
+const buttonsContainerBack = document.getElementsByClassName("buttonsContainerBack")[0];
+const displayButtonColorInactive = '#c4c4c4cc';
+const displayButtonColorActive = '#ffffff00';
+const leftButton = document.getElementById('leftButt');
+const rightButton = document.getElementById('rightButt');
 
 // MENU
 const menu = document.getElementsByClassName("menu")[0];
@@ -33,9 +44,48 @@ const categoryToCard = {
 }
 
 var choosenCategories = 0;
+var displayActive = 0;
+var currentCard = '';
 
 for (const [key, value] of Object.entries(categoryToCard)) {
     value.value = 0;
+}
+
+for (var i = 0; i < allDisplayButtons.length; i++) {
+    allDisplayButtons[i].value = false;
+}
+
+ipcRenderer.on('video-response', (event, arg) => {
+    if (arg.left) {
+        leftButton.value = false;
+        leftButton.style.backgroundColor = displayButtonColorActive;
+    }
+    else {
+        rightButton.value = false;
+        rightButton.style.backgroundColor = displayButtonColorActive;
+    }
+    displayActive -= 1;
+});
+
+function ButtonClick(button) {
+    if (button.value == false) {
+        button.value = true;
+        displayActive += 1;
+        button.style.backgroundColor = displayButtonColorInactive;
+        let Data = {
+            left: button.id == 'leftButt',
+            source: currentCard
+        };
+        ipcRenderer.send('video-sender-clicked', Data);
+    }
+}
+
+function buttonsContainerClick() {
+    buttonsContainerBack.style.display = 'none';
+}
+
+function videoButtonClick() {
+    buttonsContainerBack.style.display = 'inline';
 }
 
 function backClick() {
@@ -45,6 +95,7 @@ function backClick() {
 
 function cardClick(card) {
     offFilters();
+    currentCard = card.id;
     info.src = `./Assets/Content/${card.id}.png`;
     qrCode.src = `./Assets/QR/${card.id}.png`;
     videoButton.style.backgroundImage = `url(./Assets/VideoButtons/${card.id}.png)`;

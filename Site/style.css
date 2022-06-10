@@ -259,3 +259,51 @@
     object-fit: none;
     object-position: 0% 0%;
 }
+
+
+/* DISPLAY BUTTONS */
+
+.buttonsContainerBack {
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+}
+
+.buttonsContainer {
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
+    background-color: #e2e2e97a;
+}
+
+.displayButtons {
+    position: fixed;
+    width: 1191px;
+    height: 551px;
+    left: 365px;
+    top: 265px;
+    background: rgba(255, 255, 255, 0.8);
+    background-image: url(./Assets/displayButtons.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(30px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 50px;
+}
+
+.displayButton {
+    position: absolute;
+    height: 551px;
+    width: 595px;
+    background-color: #ffffff00;
+}
+
+.displayButton#leftButt {
+    border-radius: 50px 0px 0px 50px;
+}
+
+.displayButton#rightButt {
+    border-radius: 0px 50px 50px 0px;
+}
