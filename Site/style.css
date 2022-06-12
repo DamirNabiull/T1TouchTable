@@ -176,33 +176,64 @@
 
 .qrInfo {
     position: absolute;
-    width: 363px;
-    height: 228px;
-    left: 82px;
-    top: 322px;
+    width: 433px;
+    height: 275px;
+    left: 47px;
+    top: 299px;
 }
 
-.qrCode {
+.qrCode1, .qrCode2 {
     position: absolute;
     width: 155px;
     height: 155px;
-    left: 106px;
+    top: 95px;
+}
+
+.qrCode1 {
+    left: 58px;
+}
+
+.qrCode2 {
+    left: 221px;
 }
 
 .qrText {
     position: absolute;
-    width: 363px;
-    height: 62px;
-    top: 156px;
+    width: 433px;
+    height: 72px;
     font-family: 'ALS Hauss';
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 26px;
     line-height: 140%;
     text-align: center;
     letter-spacing: -0.03em;
     color: #000000;
     user-select: none;
+}
+
+.rus,
+.eng {
+    position: absolute;
+    width: 35px;
+    height: 25px;
+    top: 250px;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #69819C;
+}
+
+.rus {
+    left: 118px;
+}
+
+.eng {
+    left: 280px;
 }
 
 .videoPresentation {

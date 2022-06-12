@@ -10,7 +10,8 @@ const displaysBlocked = document.getElementsByClassName("displaysBlocked")[0];
 // CONTENT
 const content = document.getElementsByClassName("content")[0];
 const info = document.getElementsByClassName("info")[0];
-const qrCode = document.getElementsByClassName("qrCode")[0];
+const qrCode1 = document.getElementsByClassName("qrCode1")[0];
+const qrCode2 = document.getElementsByClassName("qrCode2")[0];
 const videoButton = document.getElementsByClassName("videoButton")[0];
 
 const buttonsContainerBack = document.getElementsByClassName("buttonsContainerBack")[0];
@@ -119,7 +120,8 @@ function cardClick(card) {
     currentCard = card.id;
     info.style.height = `${infoH[card.id]}px`;
     info.src = `./Assets/Content/${card.id}.png`;
-    qrCode.src = `./Assets/QR/${card.id}.png`;
+    qrCode1.src = `./Assets/QR/${card.id}.png`;
+    qrCode2.src = `./Assets/QR/${card.id}.png`;
     videoButton.style.backgroundImage = `url(./Assets/VideoButtons/${card.id}.png)`;
     content.style.display = "inline";
     menu.style.display = "none";
