@@ -12,6 +12,9 @@ const info = document.getElementsByClassName("info")[0];
 const qrCode = document.getElementsByClassName("qrCode")[0];
 const videoButton = document.getElementsByClassName("videoButton")[0];
 
+const qrInfo = document.getElementsByClassName("qrInfo")[0];
+const fuckingQrInfo = document.getElementsByClassName("fuckingQrInfo")[0];
+
 const buttonsContainerBack = document.getElementsByClassName("buttonsContainerBack")[0];
 const displayButtonColorInactive = '#c4c4c4cc';
 const displayButtonColorActive = '#ffffff00';
@@ -116,7 +119,15 @@ function cardClick(card) {
     currentCard = card.id;
     info.style.height = `${infoH[card.id]}px`;
     info.src = `./Assets/Content/${card.id}.png`;
-    qrCode.src = `./Assets/QR/${card.id}.png`;
+    if (card.id == 'CRM+') {
+        qrInfo.style.display = 'none';
+        fuckingQrInfo.style.display = 'inline';
+    }
+    else {
+        qrInfo.style.display = 'inline';
+        fuckingQrInfo.style.display = 'none';
+        qrCode.src = `./Assets/QR/${card.id}.png`;
+    }
     videoButton.style.backgroundImage = `url(./Assets/VideoButtons/${card.id}.png)`;
     content.style.display = "inline";
     menu.style.display = "none";
