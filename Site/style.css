@@ -274,7 +274,8 @@
     position: fixed;
     width: 1920px;
     height: 1080px;
-    background-color: #e2e2e97a;
+    background-color: #C0C0C9;
+    opacity: 0.4;
 }
 
 .displayButtons {
@@ -325,69 +326,4 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: none;
-}
-
-
-.fuckingQrInfo {
-    position: absolute;
-    width: 433px;
-    height: 275px;
-    left: 47px;
-    top: 299px;
-    display: none;
-}
-
-.fuckingQrCode1,
-.fuckingQrCode2 {
-    position: absolute;
-    width: 155px;
-    height: 155px;
-    top: 95px;
-}
-
-.fuckingQrCode1 {
-    left: 58px;
-}
-
-.fuckingQrCode2 {
-    left: 221px;
-}
-
-.fuckingQrText {
-    position: absolute;
-    width: 433px;
-    height: 72px;
-    font-family: 'ALS Hauss';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 140%;
-    text-align: center;
-    letter-spacing: -0.03em;
-    color: #000000;
-    user-select: none;
-}
-
-.rus,
-.eng {
-    position: absolute;
-    width: 35px;
-    height: 25px;
-    top: 250px;
-    font-family: 'ALS Hauss';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 140%;
-    text-align: center;
-    letter-spacing: -0.03em;
-    color: #69819C;
-}
-
-.rus {
-    left: 118px;
-}
-
-.eng {
-    left: 280px;
 }
