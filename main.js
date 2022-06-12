@@ -14,7 +14,7 @@ app.whenReady().then(() => {
 		}
 	}
 	const display1 = neededDisplays[0];
-	const display2 = neededDisplays[neededDisplays.length-1];
+	const display2 = neededDisplays[neededDisplays.length - 1];
 	// let externalDisplay = displays.find((display) => {
 	// 	return display.bounds.x !== 0 || display.bounds.y !== 0
 	// })
@@ -39,36 +39,29 @@ app.whenReady().then(() => {
 		},
 	})
 
-	mainWin.setVisibleOnAllWorkspaces(false, {
-		visibleOnFullScreen: false,
-		skipTransformProcessType: false,
+	mainWin.setVisibleOnAllWorkspaces(true, {
+		visibleOnFullScreen: true,
+		skipTransformProcessType: true,
 	});
 
 	mainWin.loadFile('Site/index.html');
 
 	// LEFT WIN
 	leftVideoWin = new BrowserWindow({
-		width: 1920,
-		height: 1080,
-		x: display1.bounds.x,
-      	y: display1.bounds.y,
-		transparent: false,
-		hasShadow: false,
+		fullscreen: false,
+		fullscreenable: true,
 		frame: false,
-		resizable: false,
-		alwaysOnTop: true,
-		minimizable: false,
-		maximizable: true,
-		kiosk: true,
+		x: display1.bounds.x,
+		y: display1.bounds.y,
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false
 		},
 	})
 
-	leftVideoWin.setVisibleOnAllWorkspaces(false, {
-		visibleOnFullScreen: false,
-		skipTransformProcessType: false,
+	leftVideoWin.setVisibleOnAllWorkspaces(true, {
+		visibleOnFullScreen: true,
+		skipTransformProcessType: true,
 	});
 
 	leftVideoWin.loadFile('Site/VideoPages/videoPanel.html');
@@ -76,34 +69,29 @@ app.whenReady().then(() => {
 
 	// RIGHT WIN
 	rightVideoWin = new BrowserWindow({
-		width: 1920,
-		height: 1080,
-		x: display2.bounds.x,
-      	y: display2.bounds.y,
-		transparent: false,
-		hasShadow: false,
+		fullscreen: false,
+		fullscreenable: true,
 		frame: false,
-		resizable: false,
-		alwaysOnTop: true,
-		minimizable: false,
-		maximizable: true,
-		kiosk: true,
+		x: display2.bounds.x,
+		y: display2.bounds.y,
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false
 		},
 	})
 
-	rightVideoWin.setVisibleOnAllWorkspaces(false, {
-		visibleOnFullScreen: false,
-		skipTransformProcessType: false,
+	rightVideoWin.setVisibleOnAllWorkspaces(true, {
+		visibleOnFullScreen: true,
+		skipTransformProcessType: true,
 	});
 
 	rightVideoWin.loadFile('Site/VideoPages/videoPanel.html');
 
 
 	// FUNCTIONS
-	
+
+	leftVideoWin.setMenuBarVisibility(false)
+
 	leftVideoWin.webContents.send('set-video-pos', Data);
 	Data.left = false;
 	rightVideoWin.webContents.send('set-video-pos', Data);
@@ -115,9 +103,19 @@ app.whenReady().then(() => {
 		else {
 			rightVideoWin.webContents.send('start-video', arg);
 		}
-    });
+	});
 
 	ipcMain.on('video-ended-response', (event, arg) => {
 		mainWin.webContents.send('video-response', arg);
-    });
+	});
+
+	setTimeout(() => {
+		leftVideoWin.maximize();
+		rightVideoWin.maximize();
+	  }, 3000);
+	
+	  setTimeout(() => {
+		leftVideoWin.setFullScreen(true);
+		rightVideoWin.setFullScreen(true);
+	  }, 6000);
 })
