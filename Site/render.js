@@ -120,8 +120,8 @@ function cardClick(card) {
     currentCard = card.id;
     info.style.height = `${infoH[card.id]}px`;
     info.src = `./Assets/Content/${card.id}.png`;
-    qrCode1.src = `./Assets/QR/${card.id}.png`;
-    qrCode2.src = `./Assets/QR/${card.id}.png`;
+    qrCode1.src = `./Assets/QR/${card.id}_ru.png`;
+    qrCode2.src = `./Assets/QR/${card.id}_en.png`;
     videoButton.style.backgroundImage = `url(./Assets/VideoButtons/${card.id}.png)`;
     content.style.display = "inline";
     menu.style.display = "none";

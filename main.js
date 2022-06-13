@@ -112,10 +112,10 @@ app.whenReady().then(() => {
 	setTimeout(() => {
 		leftVideoWin.maximize();
 		rightVideoWin.maximize();
-	  }, 3000);
+	  }, 2000);
 	
 	  setTimeout(() => {
 		leftVideoWin.setFullScreen(true);
 		rightVideoWin.setFullScreen(true);
-	  }, 6000);
+	  }, 3000);
 })
