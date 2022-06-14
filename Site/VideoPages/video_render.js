@@ -9,13 +9,13 @@ var isLeft = false;
 video.addEventListener('ended', (event) => {
     if (play) {
         console.log(`${isLeft} - Stoped`)
-        play = false;
         videoSrc.src = '../Assets/Video/idle.mp4';
         video.load();
         let Data = {
             left: isLeft,
         }
         ipcRenderer.send('video-ended-response', Data);
+        play = false;
     }
     video.play();
 });
@@ -28,8 +28,8 @@ ipcRenderer.on('set-video-pos', (event, arg) => {
 });
 
 ipcRenderer.on('start-video', (event, arg) => {
-    play = true;
     videoSrc.src = `../Assets/Video/${arg.source}.mp4`;
     video.load();
     video.play();
+    play = true;
 });

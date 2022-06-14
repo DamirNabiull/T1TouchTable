@@ -108,13 +108,13 @@ app.whenReady().then(() => {
 	setTimeout(() => {
 		leftVideoWin.maximize();
 		rightVideoWin.maximize();
-	  }, 2000);
-	
-	  setTimeout(() => {
+	}, 2000);
+
+	setTimeout(() => {
 		leftVideoWin.setFullScreen(true);
 		rightVideoWin.setFullScreen(true);
 		leftVideoWin.webContents.send('set-video-pos', Data);
 		Data.left = false;
 		rightVideoWin.webContents.send('set-video-pos', Data);
-	  }, 3000);
+	}, 3000);
 })

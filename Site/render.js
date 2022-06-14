@@ -66,6 +66,8 @@ var choosenCategories = 0;
 var displayActive = 0;
 var currentCard = '';
 var videoLang = false;
+var leftTimer = null;
+var rightTimer = null;
 
 for (const [key, value] of Object.entries(categoryToCard)) {
     value.value = 0;
@@ -79,10 +81,12 @@ ipcRenderer.on('video-response', (event, arg) => {
     if (arg.left) {
         leftButton.value = false;
         leftButton.style.backgroundColor = displayButtonColorActive;
+        clearTimeout(leftTimer);
     }
     else {
         rightButton.value = false;
         rightButton.style.backgroundColor = displayButtonColorActive;
+        clearTimeout(rightTimer);
     }
     displayActive -= 1;
     displaysBlocked.style.display = 'none';
@@ -100,6 +104,27 @@ function buttonClick(button) {
             source: `${currentCard}_${switches[Number(videoLang)].id}`
         };
         ipcRenderer.send('video-sender-clicked', Data);
+
+        if (button.id == 'leftButt') {
+            leftTimer = setTimeout(function () {
+                leftButton.value = false;
+                leftButton.style.backgroundColor = displayButtonColorActive;
+                displayActive -= 1;
+                displaysBlocked.style.display = 'none';
+                displayButtons.style.display = 'inline';
+                slider.style.display = 'flex';
+            }, 100000);
+        }
+        else {
+            rightTimer = setTimeout(function () {
+                rightButton.value = false;
+                rightButton.style.backgroundColor = displayButtonColorActiv
+                displayActive -= 1;
+                displaysBlocked.style.display = 'none';
+                displayButtons.style.display = 'inline';
+                slider.style.display = 'flex';
+            }, 100000);
+        }
     }
 
     if (displayActive == 2) {
@@ -113,7 +138,7 @@ function sliderClick() {
     let tempColor = window.getComputedStyle(switches[0]).backgroundColor;
     let width = switches[0].style.width;
     let color = window.getComputedStyle(switches[0]).color;
-    
+
     switches[0].style.backgroundColor = window.getComputedStyle(switches[1]).backgroundColor;
     switches[0].style.width = switches[1].style.width;
     switches[0].style.color = window.getComputedStyle(switches[1]).color;
