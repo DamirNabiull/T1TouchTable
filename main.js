@@ -51,8 +51,8 @@ app.whenReady().then(() => {
 		fullscreen: false,
 		fullscreenable: true,
 		frame: false,
-		x: display1.bounds.x,
-		y: display1.bounds.y,
+		x: display2.bounds.x,
+		y: display2.bounds.y,
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false
@@ -72,8 +72,8 @@ app.whenReady().then(() => {
 		fullscreen: false,
 		fullscreenable: true,
 		frame: false,
-		x: display2.bounds.x,
-		y: display2.bounds.y,
+		x: display1.bounds.x,
+		y: display1.bounds.y,
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false
