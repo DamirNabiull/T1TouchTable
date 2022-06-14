@@ -92,10 +92,6 @@ app.whenReady().then(() => {
 
 	leftVideoWin.setMenuBarVisibility(false)
 
-	leftVideoWin.webContents.send('set-video-pos', Data);
-	Data.left = false;
-	rightVideoWin.webContents.send('set-video-pos', Data);
-
 	ipcMain.on('video-sender-clicked', (event, arg) => {
 		if (arg.left == true) {
 			leftVideoWin.webContents.send('start-video', arg);
@@ -117,5 +113,8 @@ app.whenReady().then(() => {
 	  setTimeout(() => {
 		leftVideoWin.setFullScreen(true);
 		rightVideoWin.setFullScreen(true);
+		leftVideoWin.webContents.send('set-video-pos', Data);
+		Data.left = false;
+		rightVideoWin.webContents.send('set-video-pos', Data);
 	  }, 3000);
 })

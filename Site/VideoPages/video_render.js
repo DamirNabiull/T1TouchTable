@@ -8,6 +8,7 @@ var isLeft = false;
 
 video.addEventListener('ended', (event) => {
     if (play) {
+        console.log(`${isLeft} - Stoped`)
         play = false;
         videoSrc.src = '../Assets/Video/idle.mp4';
         video.load();
@@ -18,6 +19,8 @@ video.addEventListener('ended', (event) => {
     }
     video.play();
 });
+
+console.log(isLeft)
 
 ipcRenderer.on('set-video-pos', (event, arg) => {
     isLeft = arg.left;
