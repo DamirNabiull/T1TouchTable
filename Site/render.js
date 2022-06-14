@@ -66,8 +66,6 @@ var choosenCategories = 0;
 var displayActive = 0;
 var currentCard = '';
 var videoLang = false;
-var leftTimer = null;
-var rightTimer = null;
 
 for (const [key, value] of Object.entries(categoryToCard)) {
     value.value = 0;
@@ -81,12 +79,10 @@ ipcRenderer.on('video-response', (event, arg) => {
     if (arg.left) {
         leftButton.value = false;
         leftButton.style.backgroundColor = displayButtonColorActive;
-        clearTimeout(leftTimer);
     }
     else {
         rightButton.value = false;
         rightButton.style.backgroundColor = displayButtonColorActive;
-        clearTimeout(rightTimer);
     }
     displayActive -= 1;
 
