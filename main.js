@@ -1,8 +1,11 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const electron = require('electron')
 var mainWin, leftVideoWin, rightVideoWin;
-var Data = {
+const DataLeft = {
 	left: true
+}
+const DataRight = {
+	left: false
 }
 
 app.whenReady().then(() => {
@@ -113,8 +116,7 @@ app.whenReady().then(() => {
 	setTimeout(() => {
 		leftVideoWin.setFullScreen(true);
 		rightVideoWin.setFullScreen(true);
-		leftVideoWin.webContents.send('set-video-pos', Data);
-		Data.left = false;
-		rightVideoWin.webContents.send('set-video-pos', Data);
+		leftVideoWin.webContents.send('set-video-pos', DataLeft);
+		rightVideoWin.webContents.send('set-video-pos', DataRight);
 	}, 3000);
 })
