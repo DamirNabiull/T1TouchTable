@@ -11,16 +11,18 @@ const DataRight = {
 app.whenReady().then(() => {
 	let displays = electron.screen.getAllDisplays();
 	var neededDisplays = [];
+	var displayLeft, displayRight;
 	for (var display of displays) {
 		if (display.bounds.x !== 0 || display.bounds.y !== 0) {
 			neededDisplays.push(display)
 		}
+		if (display.id == 2779098405) {
+			displayLeft = display;
+		}
+		if (display.id == 2841568472) {
+			displayRight = display;
+		}
 	}
-	const display1 = neededDisplays[0];
-	const display2 = neededDisplays[neededDisplays.length - 1];
-	// let externalDisplay = displays.find((display) => {
-	// 	return display.bounds.x !== 0 || display.bounds.y !== 0
-	// })
 
 	console.log(neededDisplays)
 
@@ -54,8 +56,8 @@ app.whenReady().then(() => {
 		fullscreen: false,
 		fullscreenable: true,
 		frame: false,
-		x: display2.bounds.x,
-		y: display2.bounds.y,
+		x: displayLeft.bounds.x,
+		y: displayLeft.bounds.y,
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false
@@ -75,8 +77,8 @@ app.whenReady().then(() => {
 		fullscreen: false,
 		fullscreenable: true,
 		frame: false,
-		x: display1.bounds.x,
-		y: display1.bounds.y,
+		x: displayRight.bounds.x,
+		y: displayRight.bounds.y,
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false
