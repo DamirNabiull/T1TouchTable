@@ -127,8 +127,8 @@
 
             <div class="qrInfo">
                 <h1 class="qrText">Отсканируйте QR-код, чтобы<br>сохранить информацию о продукте</h1>
-                <img class="qrCode1" src="./Assets/QR/Дататех+.png" />
-                <img class="qrCode2" src="./Assets/QR/Дататех+.png" />
+                <img class="qrCode1" src="./Assets/QR/Дататех+_ru.png" />
+                <img class="qrCode2" src="./Assets/QR/Дататех+_en.png" />
                 <h1 class="rus">RUS</h1>
                 <h1 class="eng">ENG</h1>
             </div>
@@ -145,8 +145,13 @@
             <div class="buttonsContainer" onclick="buttonsContainerClick();"></div>
 
             <div class="displayButtons">
-                <div class="displayButton" id="leftButt" onclick="ButtonClick(this);"></div>
-                <div class="displayButton" id="rightButt" style="left: 596px;" onclick="ButtonClick(this);"></div>
+                <div class="displayButton" id="leftButt" onclick="buttonClick(this);"></div>
+                <div class="displayButton" id="rightButt" style="left: 596px;" onclick="buttonClick(this);"></div>
+            </div>
+
+            <div class="slider" onclick="sliderClick();">
+                <div class="switch" id="RUS">RUS</div>
+                <div class="switch" id="ENG">ENG</div>
             </div>
 
             <div class="displaysBlocked"></div>

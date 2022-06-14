@@ -25,6 +25,10 @@ const menu = document.getElementsByClassName("menu")[0];
 const indicators = document.getElementsByClassName("indicator");
 const offCategories = document.getElementsByClassName("offCategories")[0];
 
+// SLIDER
+const switches = document.getElementsByClassName("switch");
+const slider = document.getElementsByClassName("slider")[0];
+
 const categoryToCard = {
     'Финтех': document.getElementById('i1'),
     'Цифровой банкинг': document.getElementById('i1'),
@@ -61,6 +65,7 @@ const infoH = {
 var choosenCategories = 0;
 var displayActive = 0;
 var currentCard = '';
+var videoLang = false;
 
 for (const [key, value] of Object.entries(categoryToCard)) {
     value.value = 0;
@@ -82,16 +87,17 @@ ipcRenderer.on('video-response', (event, arg) => {
     displayActive -= 1;
     displaysBlocked.style.display = 'none';
     displayButtons.style.display = 'inline';
+    slider.style.display = 'flex';
 });
 
-function ButtonClick(button) {
+function buttonClick(button) {
     if (button.value == false) {
         button.value = true;
         displayActive += 1;
         button.style.backgroundColor = displayButtonColorInactive;
         let Data = {
             left: button.id == 'leftButt',
-            source: currentCard
+            source: `${currentCard}_${switches[Number(videoLang)].id}`
         };
         ipcRenderer.send('video-sender-clicked', Data);
     }
@@ -99,7 +105,25 @@ function ButtonClick(button) {
     if (displayActive == 2) {
         displaysBlocked.style.display = 'inline';
         displayButtons.style.display = 'none';
+        slider.style.display = 'none';
     }
+}
+
+function sliderClick() {
+    let tempColor = window.getComputedStyle(switches[0]).backgroundColor;
+    let width = switches[0].style.width;
+    let color = window.getComputedStyle(switches[0]).color;
+    
+    switches[0].style.backgroundColor = window.getComputedStyle(switches[1]).backgroundColor;
+    switches[0].style.width = switches[1].style.width;
+    switches[0].style.color = window.getComputedStyle(switches[1]).color;
+
+    switches[1].style.backgroundColor = tempColor;
+    switches[1].style.width = width;
+    switches[1].style.color = color;
+
+    videoLang = !videoLang;
+    // console.log(switches[Number(videoLang)].id);
 }
 
 function buttonsContainerClick() {

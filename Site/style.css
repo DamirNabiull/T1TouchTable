@@ -182,7 +182,8 @@
     top: 299px;
 }
 
-.qrCode1, .qrCode2 {
+.qrCode1,
+.qrCode2 {
     position: absolute;
     width: 155px;
     height: 155px;
@@ -312,9 +313,9 @@
 .displayButtons {
     position: fixed;
     width: 1191px;
-    height: 551px;
+    height: 711px;
     left: 365px;
-    top: 265px;
+    top: 185px;
     background: rgba(255, 255, 255, 0.8);
     background-image: url(./Assets/displayButtons.png);
     background-position: center center;
@@ -333,11 +334,11 @@
 }
 
 .displayButton#leftButt {
-    border-radius: 50px 0px 0px 50px;
+    border-radius: 50px 0px 0px 0px;
 }
 
 .displayButton#rightButt {
-    border-radius: 0px 50px 50px 0px;
+    border-radius: 0px 50px 0px 0px;
 }
 
 .displaysBlocked {
@@ -357,4 +358,62 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: none;
+}
+
+.slider {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5.26966px 6.58707px;
+    gap: 6.59px;
+    position: absolute;
+    width: 360.24px;
+    height: 83.16px;
+    left: 779.7px;
+    top: 775px;
+    background: #F8F8FA;
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    border-radius: 60.4909px;
+}
+
+.switch#RUS {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 169.24px;
+    height: 72.62px;
+    background: #E2E2E9;
+    border-radius: 39.5224px;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34.2528px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #000000;
+    user-select: none;
+    margin-left: -2px;
+}
+
+.switch#ENG {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 171.24px;
+    height: 72.62px;
+    border-radius: 39.5224px;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34.2528px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #21A8DF;
+    user-select: none;
+    margin-right: -2px;
 }
