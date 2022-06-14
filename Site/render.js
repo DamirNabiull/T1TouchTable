@@ -89,9 +89,12 @@ ipcRenderer.on('video-response', (event, arg) => {
         clearTimeout(rightTimer);
     }
     displayActive -= 1;
-    displaysBlocked.style.display = 'none';
-    displayButtons.style.display = 'inline';
-    slider.style.display = 'flex';
+
+    if (displayActive <= 1) {
+        displaysBlocked.style.display = 'none';
+        displayButtons.style.display = 'inline';
+        slider.style.display = 'flex';
+    }
 });
 
 function buttonClick(button) {
@@ -104,30 +107,9 @@ function buttonClick(button) {
             source: `${currentCard}_${switches[Number(videoLang)].id}`
         };
         ipcRenderer.send('video-sender-clicked', Data);
-
-        if (button.id == 'leftButt') {
-            leftTimer = setTimeout(function () {
-                leftButton.value = false;
-                leftButton.style.backgroundColor = displayButtonColorActive;
-                displayActive -= 1;
-                displaysBlocked.style.display = 'none';
-                displayButtons.style.display = 'inline';
-                slider.style.display = 'flex';
-            }, 100000);
-        }
-        else {
-            rightTimer = setTimeout(function () {
-                rightButton.value = false;
-                rightButton.style.backgroundColor = displayButtonColorActiv
-                displayActive -= 1;
-                displaysBlocked.style.display = 'none';
-                displayButtons.style.display = 'inline';
-                slider.style.display = 'flex';
-            }, 100000);
-        }
     }
 
-    if (displayActive == 2) {
+    if (displayActive >= 2) {
         displaysBlocked.style.display = 'inline';
         displayButtons.style.display = 'none';
         slider.style.display = 'none';
