@@ -24,6 +24,9 @@ app.whenReady().then(() => {
 		}
 	}
 
+	// displayLeft = neededDisplays[0];
+	// displayRight = neededDisplays[0];
+
 	console.log(neededDisplays)
 
 	// MAIN WIN

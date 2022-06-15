@@ -25,6 +25,9 @@ console.log(isLeft)
 ipcRenderer.on('set-video-pos', (event, arg) => {
     isLeft = arg.left;
     console.log(isLeft);
+    if (isLeft) {
+        video.muted = !video.muted
+    }
 });
 
 ipcRenderer.on('start-video', (event, arg) => {

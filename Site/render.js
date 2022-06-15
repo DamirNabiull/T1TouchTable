@@ -168,6 +168,9 @@ function categoryClick(button) {
         categoryToCard[button.innerHTML].value -= 1;
     }
     else {
+        if (choosenCategories >= 1 && categoryToCard[button.innerHTML].value == 0) {
+            offFilters();
+        }
         if (choosenCategories == 0) {
             showIndicators();
         }
